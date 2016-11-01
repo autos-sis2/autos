@@ -22,6 +22,7 @@ public class Sistema2 {
         frame1.setBounds(100, 100, 600, 400);
         frame1.setVisible(true);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        print "giala"
     }
     
 }
