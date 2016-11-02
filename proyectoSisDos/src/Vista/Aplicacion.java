@@ -3,26 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema2;
+package Vista;
 
 import javax.swing.JFrame;
 
 /**
  *
- * @author omar
+ * @author Fabiola Fernandez
  */
-public class Sistema2 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Aplicacion { /*CAMBIO EN EL NOMBRE */
+     public static void main(String[] args) {
         interfaz_regitro_vehiculo frame1 = new interfaz_regitro_vehiculo();
         frame1.setBounds(100, 100, 600, 400);
         frame1.setVisible(true);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        print "giala"
+       
     }
-    
 }

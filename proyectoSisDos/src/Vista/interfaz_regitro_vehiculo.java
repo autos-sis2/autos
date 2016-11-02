@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema2;
+package Vista;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -232,3 +232,4 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
                 }
         }
 }
+
