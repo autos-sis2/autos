@@ -13,6 +13,8 @@ public class Pruebadeconexion {
     
     public static void main(String []args)
     {
-      ConexionPostgres cn = new  ConexionPostgres(); 
+      //ConexionPostgres cn = new  ConexionPostgres(); 
+       Empleado e = new Empleado(); 
+       e.añadir_nuevo_empleado("fabi","fenendea","F", "7633", 45, 3, 1);
     }
 }

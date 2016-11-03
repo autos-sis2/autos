@@ -34,4 +34,10 @@ public class ConexionPostgres {
             System.out.println("no se pudo establecer la conexion");
         }
     }
+    
+    /*nos retorna la coneccion con postgresql*/
+    public Connection conexion()
+    {
+      return conexion;
+    }
 }
