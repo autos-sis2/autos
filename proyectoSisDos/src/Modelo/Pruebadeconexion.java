@@ -15,6 +15,6 @@ public class Pruebadeconexion {
     {
       //ConexionPostgres cn = new  ConexionPostgres(); 
        Empleado e = new Empleado(); 
-       e.añadir_nuevo_empleado("fabi","fenendea","F", "7633", 45, 3, 1);
+       e.añadir_nuevo_empleado("carlita","chavez","F", "7633", 45, 3, 1);
     }
 }
