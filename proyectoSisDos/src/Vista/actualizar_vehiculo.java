@@ -7,7 +7,6 @@ package Vista;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -26,15 +25,15 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
- * @author omar
+ * @author Fabiola Fernandez
  */
-public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
-        JLabel title , modelo  ,color , presio,  capacidad , marca , imagenlabe,codigo,numpuerta ,year;
-        JTextField modelo1,color1,presio1,capacidad1,marca1 ,codigo1,numpuerta1 ,year1;
+public class interfaz_actualizar_vehiculo extends JFrame implements ActionListener{
+        JLabel title , modelo , color , presio,  capacidad , marca , imagenlabe,caja,numpuerta ,year;
+        JTextField modelo1,color1,presio1,capacidad1,marca1 , caja1,numpuerta1 ,year1;
         JButton guardar ,verificar ,image;
         private JFileChooser fileChooser;
-   
-        public interfaz_regitro_vehiculo(){
+        
+    public interfaz_actualizar_vehiculo(){
         setLayout(new GridLayout(1,2,10,10));
         
         JPanel paneregistro = new JPanel();
@@ -78,7 +77,6 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
         modelo.setFont(new Font("TimesRoman", 2, 14));
         modelo.setForeground(Color.gray);
         
-        
         color = new JLabel("COLOR");
         color.setFont(new Font("TimesRoman", 2, 14));
         color.setForeground(Color.gray);
@@ -91,9 +89,9 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
         capacidad.setFont(new Font("TimesRoman", 2, 14));
         capacidad.setForeground(Color.gray);
         
-        codigo= new JLabel("CODIGO");
-        codigo.setFont(new Font("TimesRoman", 2, 14));
-        codigo.setForeground(Color.gray);
+        caja= new JLabel("CAJA");
+        caja.setFont(new Font("TimesRoman", 2, 14));
+        caja.setForeground(Color.gray);
         
         numpuerta= new JLabel("Nro. PUERTAS");
         numpuerta.setFont(new Font("TimesRoman", 2, 14));
@@ -114,7 +112,6 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
         modelo1 = new JTextField();
         modelo1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
         modelo1.setFont(new Font("TimesRoman", 2, 10));
-       
         
         color1 = new JTextField();
         color1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
@@ -128,9 +125,9 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
         capacidad1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
         capacidad1.setFont(new Font("TimesRoman", 2, 10));
         
-        codigo1= new JTextField();
-        codigo1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
-        codigo1.setFont(new Font("TimesRoman", 2, 10));
+        caja1= new JTextField();
+        caja1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
+        caja1.setFont(new Font("TimesRoman", 2, 10));
         
         numpuerta1 = new JTextField();
         numpuerta1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
@@ -173,7 +170,7 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
         izquierdo.add(color);
         izquierdo.add(presio);
         izquierdo.add(capacidad);
-        izquierdo.add(codigo);
+        izquierdo.add(caja);
         izquierdo.add(numpuerta);
         izquierdo.add(year);
         
@@ -185,7 +182,7 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
         derecho.add(color1);
         derecho.add(presio1);
         derecho.add(capacidad1);
-        derecho.add(codigo1);
+        derecho.add(caja1);
         derecho.add(numpuerta1);
         derecho.add(year1);
         

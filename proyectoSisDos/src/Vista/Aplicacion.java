@@ -14,9 +14,12 @@ import javax.swing.JFrame;
 public class Aplicacion { /*CAMBIO EN EL NOMBRE */
      public static void main(String[] args) {
         interfaz_regitro_vehiculo frame1 = new interfaz_regitro_vehiculo();
-        frame1.setBounds(100, 100, 600, 400);
+        frame1.setBounds(100, 100, 500, 400);
         frame1.setVisible(true);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //eliminar_vehiculo ev = new eliminar_vehiculo();
+         //ev.setVisible(true);
        
     }
 }
