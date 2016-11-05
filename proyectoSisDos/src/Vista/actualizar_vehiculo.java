@@ -11,40 +11,36 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author Fabiola Fernandez
  */
-public class interfaz_actualizar_vehiculo extends JFrame implements ActionListener{
-        JLabel title , modelo , color , presio,  capacidad , marca , imagenlabe,caja,numpuerta ,year;
-        JTextField modelo1,color1,presio1,capacidad1,marca1 , caja1,numpuerta1 ,year1;
-        JButton guardar ,verificar ,image;
-        private JFileChooser fileChooser;
+public class actualizar_vehiculo extends JFrame implements ActionListener{
+        JLabel title , modelo , color , presio,  capacidad , marca , imagenlabe,codigo,numpuerta ,year;
+        JTextField modelo1,color1,presio1,capacidad1,marca1 , codigo1,numpuerta1 ,year1;
+        JButton guardar ,verificar;
+       
+        private String[] datos = new String[9];
         
-    public interfaz_actualizar_vehiculo(){
+        
+    
+    public actualizar_vehiculo(String informacion){
+        datos = informacion.split(";");
+        
         setLayout(new GridLayout(1,2,10,10));
         
         JPanel paneregistro = new JPanel();
         //paneregistro.setBackground(Color.red);
         paneregistro.setBorder(javax.swing.BorderFactory.createTitledBorder("REGISTRO DE VEHICULO"));
-        paneregistro.setLayout(new BorderLayout(10,10));
+        paneregistro.setLayout(new BorderLayout(5,5));
         
-        JPanel paneimagen = new JPanel();
-        paneimagen.setLayout(new BorderLayout(10,10));
-        //paneimagen.setBackground(Color.BLUE);
-        paneimagen.setBorder(javax.swing.BorderFactory.createTitledBorder("IMAGEN DE VEHICULO"));
        
         JPanel centro = new JPanel();
         centro.setLayout(new GridLayout(1,2,10,10));
@@ -89,15 +85,15 @@ public class interfaz_actualizar_vehiculo extends JFrame implements ActionListen
         capacidad.setFont(new Font("TimesRoman", 2, 14));
         capacidad.setForeground(Color.gray);
         
-        caja= new JLabel("CAJA");
-        caja.setFont(new Font("TimesRoman", 2, 14));
-        caja.setForeground(Color.gray);
+        codigo = new JLabel("CODIGO");
+        codigo.setFont(new Font("TimesRoman", 2, 14));
+        codigo.setForeground(Color.gray);
         
-        numpuerta= new JLabel("Nro. PUERTAS");
+        numpuerta= new JLabel("NRO. PUERTAS");
         numpuerta.setFont(new Font("TimesRoman", 2, 14));
         numpuerta.setForeground(Color.gray);
         
-        year= new JLabel("YEAR");
+        year= new JLabel("AÑO");
         year.setFont(new Font("TimesRoman", 2, 14));
         year.setForeground(Color.gray);
         
@@ -125,9 +121,9 @@ public class interfaz_actualizar_vehiculo extends JFrame implements ActionListen
         capacidad1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
         capacidad1.setFont(new Font("TimesRoman", 2, 10));
         
-        caja1= new JTextField();
-        caja1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
-        caja1.setFont(new Font("TimesRoman", 2, 10));
+        codigo1= new JTextField();
+        codigo1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
+        codigo1.setFont(new Font("TimesRoman", 2, 10));
         
         numpuerta1 = new JTextField();
         numpuerta1.setBorder(BorderFactory.createMatteBorder(1,5,5,1,Color.gray));
@@ -140,14 +136,9 @@ public class interfaz_actualizar_vehiculo extends JFrame implements ActionListen
         //--------------instanciando botones *---------------------
         verificar = new JButton("verificar");
         guardar = new JButton("guardar");
-        image = new JButton("anadir imagen");
-        image.setActionCommand("abre");
-        
-        
-        // ---------------------------------------------
-        
+
         add(paneregistro);
-        add(paneimagen);
+       
         
         paneregistro.add(centro,BorderLayout.CENTER);
         
@@ -160,7 +151,6 @@ public class interfaz_actualizar_vehiculo extends JFrame implements ActionListen
         botones.add(verificar);
         botones.add(guardar);
         
-        paneimagen.add(image, BorderLayout.SOUTH);
         //----------anadiendo titulo
         //titulo.add(title);
         
@@ -170,11 +160,10 @@ public class interfaz_actualizar_vehiculo extends JFrame implements ActionListen
         izquierdo.add(color);
         izquierdo.add(presio);
         izquierdo.add(capacidad);
-        izquierdo.add(caja);
+        izquierdo.add(codigo);
         izquierdo.add(numpuerta);
         izquierdo.add(year);
         
-        paneimagen.add(imagenlabe,BorderLayout.CENTER);
         
         //---------anadiendo JtextField -------------
         derecho.add(marca1);
@@ -182,51 +171,30 @@ public class interfaz_actualizar_vehiculo extends JFrame implements ActionListen
         derecho.add(color1);
         derecho.add(presio1);
         derecho.add(capacidad1);
-        derecho.add(caja1);
+        derecho.add(codigo1);
         derecho.add(numpuerta1);
         derecho.add(year1);
+            
+        ordenar_datos();
         
-        
-        
-        
-       //----------eventoss-----
-       image.addActionListener(this);
-                
-                //Creando FileChooser
-                fileChooser = new JFileChooser();
-                //Añadiendole un filtro
-                FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & PNG", "jpg", "png");
-                fileChooser.setFileFilter(filter);
-         
     }
-
+    
+    public void ordenar_datos()
+    {
+        marca1.setText(datos[0]);
+        modelo1.setText(datos[1]);
+        color1.setText(datos[2]); 
+        presio1.setText(datos[3]);
+        capacidad1.setText(datos[4]);
+        codigo1.setText(datos[5]);
+        numpuerta1.setText(datos[6]);
+        year1.setText(datos[7]);
+       
+    }
+  
     public void actionPerformed(ActionEvent e)
-        {
-                if("abre".equals( e.getActionCommand() ) )
-                {                       
-                        //Valor que tomara el fileChooser
-                        int regresaValor = fileChooser.showOpenDialog(null);    
-                        //Accion del fileChooser
-                        if(regresaValor == JFileChooser.APPROVE_OPTION)
-                        {
-                                //Crear propiedades para ser utilizadas por fileChooser
-                                File archivoElegido = fileChooser.getSelectedFile();
-                                //Obteniendo la direccion del archivo
-                                String direccion = archivoElegido.getPath();
-                                //Bloque try-catch para errores
-                                try
-                                {
-                                        //Obtiene la direccion del archivo y lo instancia en icon
-                                        ImageIcon icon = new ImageIcon( direccion );
-                                        //Setea el labelImagen con el archivo obtenido
-                                        imagenlabe.setIcon( icon );
-                                }
-                                catch(Exception es)
-                                {
-                                        JOptionPane.showMessageDialog(null, "Upss!! error abriendo la imagen "+ es);
-                                }
-                        }
-                }
-        }
+    {
+    
+    }
 }
 
