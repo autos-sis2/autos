@@ -28,8 +28,7 @@ public class Empleado {
         ResultSet resp;
         try {
             Statement s = conexion.createStatement();
-            String sql1 = "INSERT INTO empleado(id_emp,nombre,apellidos,sexo,ci,salario,descuento,bonos) VALUES('"+2+"','"+nombres+"','"+apellidos+"','"+Sexo+"','"+ci+"','"+salario+"','"+descuento+"','"+bonos+"')";
-            /*falta poner increment a los clave_primaria(distinto) para q sea manejado por la base de datos "*/
+            String sql1 = "INSERT INTO empleado(nombre,apellidos,sexo,ci,salario,descuento,bonos) VALUES('"+nombres+"','"+apellidos+"','"+Sexo+"','"+ci+"','"+salario+"','"+descuento+"','"+bonos+"')";
             resp = s.executeQuery(sql1);
 
             s.close();
