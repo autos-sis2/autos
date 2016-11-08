@@ -13,15 +13,15 @@ import javax.swing.JFrame;
  */
 public class Aplicacion { /*CAMBIO EN EL NOMBRE */
      public static void main(String[] args) {
-        //interfaz_regitro_vehiculo frame1 = new interfaz_regitro_vehiculo();
-        //frame1.setBounds(100, 100, 500, 400);
-        //frame1.setVisible(true);
-        //frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        interfaz_regitro_vehiculo frame1 = new interfaz_regitro_vehiculo();
+        frame1.setBounds(100, 100, 500, 400);
+        frame1.setVisible(true);
+        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        //eliminar_vehiculo ev = new eliminar_vehiculo();
-         //ev.setVisible(true);
+        eliminar_vehiculo ev = new eliminar_vehiculo();
+        ev.setVisible(true);
          
-         actualizar_vehiculo av = new actualizar_vehiculo("como;no;podre;estar;con;vos;ro;sip");
+         actualizar_vehiculo av = new actualizar_vehiculo("coo;no;po;ar;con;vosi;ro;sip");
          av.setBounds(100, 200, 280, 400);
          av.setVisible(true);
          av.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

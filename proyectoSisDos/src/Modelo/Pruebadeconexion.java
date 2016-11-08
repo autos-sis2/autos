@@ -14,7 +14,7 @@ public class Pruebadeconexion {
     public static void main(String []args)
     {
       //ConexionPostgres cn = new  ConexionPostgres(); 
-       Empleado e = new Empleado(); 
-       e.añadir_nuevo_empleado("carlita","chavez","F", "7633", 45, 3, 1);
+       ManageBD e = new ManageBD(); 
+       
     }
 }
