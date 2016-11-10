@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelo;
 
 /**
@@ -15,6 +11,7 @@ public class Pruebadeconexion {
     {
       //ConexionPostgres cn = new  ConexionPostgres(); 
        ManageBD e = new ManageBD(); 
+       e.añadir_repuestos(3, 1, "12", "arol", "12ht");
        
     }
 }

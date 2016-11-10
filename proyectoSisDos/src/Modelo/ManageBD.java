@@ -64,9 +64,13 @@ public class ManageBD {
         }
     }
       
-      public void añadir_nuevo_vehiculo()
-      {
-        
-      }
     
+    public void añadir_repuestos(int codigo , int tipo_rep , String costo ,String nombre ,String modelo)
+    {
+         try {
+            s = conexion.createStatement();     
+            String sql1 = "INSERT INTO repuesto_automovil(id_repauto,id_tiporepuesto,nombre_rep,modelo,precio) VALUES('"+codigo+"','"+tipo_rep+"','"+nombre+"','"+modelo+"','"+costo+"')";
+            resp = s.executeQuery(sql1);
+        } catch (Exception e){}
+    }
 }

@@ -1,3 +1,5 @@
+package catalogo;
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -74,7 +76,7 @@ public class frame_principal extends JFrame {
            
             public void actionPerformed(ActionEvent ae) {
                 setVisible(false);
-                frame_sesion mipane = new frame_sesion();
+                frame_principal mipane = new frame_principal();
             }
 
         });
