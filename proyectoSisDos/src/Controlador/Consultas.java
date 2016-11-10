@@ -19,12 +19,11 @@ import java.util.ArrayList;
 public class Consultas {
     
     ConexionPostgres cp = new ConexionPostgres();
-    private Connection c = cp.conexion();
-    private  Statement s ; 
-    private  ResultSet resp;
-    public Consultas()
-    {}    
-    public ArrayList<String> extraerRoles() {    
+     Connection conn = cp.conexion();
+      Statement statement ; 
+     ResultSet resultSet;
+       
+  /*  public ArrayList<String> extraerRoles() {    
         ArrayList<String> list = new ArrayList<String>(); 
         try {
             s = c.createStatement();
@@ -35,24 +34,71 @@ public class Consultas {
         } catch (Exception e) {
         }
         return list;
-    }
+    }*/
     
-      public boolean Ingresar(String nombre, String password) {
-        boolean exito = false;
-        try {
-            s = c.createStatement();
-            resp = s.executeQuery("");
-            while (resp.next()) {
-                String res = resp.getString(1);
-                if (res.equals("t")) {
-                    exito = true;
-                }
-                break;
-            }
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-        System.out.println(exito);
-        return exito;
-    }
+public String correcto( String nom,String pass )
+{
+    String res="";
+    try {
+      statement = conn.createStatement();
+      resultSet = statement.executeQuery("SELECT correcto('"+nom+"','"+pass+"'); ");
+      while (resultSet.next())
+      {
+        res=resultSet.getString(1);
+      }
+     }
+   catch (SQLException ex) {
+        System.err.println( ex.getMessage() );
+   }
+   return res;
+}
+public void nueva_sesion( int id )
+{
+    String res="";
+    try {
+      statement = conn.createStatement();
+      resultSet = statement.executeQuery("SELECT nuevasession('"+id+"'); ");
+      while (resultSet.next())
+      {
+        res=resultSet.getString(1);
+      }
+     }
+   catch (SQLException ex) {
+        System.err.println( ex.getMessage() );
+   }
+   
+}
+public String certificado( )
+{
+    String res="";
+    try {
+      statement = conn.createStatement();
+      resultSet = statement.executeQuery("SELECT certificados2(); ");
+      while (resultSet.next())
+      {
+        res=resultSet.getString(1);
+      }
+     }
+   catch (SQLException ex) {
+        System.err.println( ex.getMessage() );
+   }
+    return res;
+}
+public String retorna_nombre( )
+{
+    String res="";
+    try {
+      statement = conn.createStatement();
+      resultSet = statement.executeQuery("SELECT nombre_apellido(); ");
+      while (resultSet.next())
+      {
+        res= resultSet.getString(1);
+        
+      }
+     }
+   catch (SQLException ex) {
+        System.err.println( ex.getMessage() );
+   }
+    return res;
+}
 }
