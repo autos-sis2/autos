@@ -88,9 +88,9 @@ public final class Test extends JPanel{
        public void llenar_vec(){
        
        
-       ImageIcon icon = new ImageIcon("C:/Users/omar/Documents/NetBeansProjects/ejemplo/auto.jpg");
-       ImageIcon icon2 = new ImageIcon("C:/Users/omar/Documents/NetBeansProjects/ejemplo/auto2.jpg");
-       ImageIcon icon3 = new ImageIcon("C:/Users/omar/Documents/NetBeansProjects/ejemplo/auto3.jpg");
+       ImageIcon icon = new ImageIcon("auto.jpg");
+       ImageIcon icon2 = new ImageIcon("auto2.jpg");
+       ImageIcon icon3 = new ImageIcon("auto3.jpg");
   
        miauto[0] = new Auto("120","EX-CON","ROJO","500.000.000$","NUEVO","1234-KBO",icon);
        miauto[1] = new Auto("121","EX-CON2","VERDE","500.000.000$","NUEVO","1234-KBO",icon2);

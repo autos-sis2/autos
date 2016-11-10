@@ -30,7 +30,7 @@ public class frame_principal extends JFrame {
         setLayout(new BorderLayout());
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize(); 
          setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-         setBounds(0,0,1200, 800);
+         setBounds(150,0,1200, 800);
 
         setVisible(true);
         
@@ -74,7 +74,8 @@ public class frame_principal extends JFrame {
            
             public void actionPerformed(ActionEvent ae) {
                 setVisible(false);
-                frame_sesion mipane = new frame_sesion();
+                frame_ingresar mipane = new frame_ingresar();
+                //interfaz_regitro_vehiculo pane=new interfaz_regitro_vehiculo();
             }
 
         });
