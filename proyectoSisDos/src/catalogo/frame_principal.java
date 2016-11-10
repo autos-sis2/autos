@@ -8,6 +8,9 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -21,12 +24,12 @@ public class frame_principal extends JFrame {
     JPanel panel_botones,principal,prueba=null;
     JMenuBar barra;
     JMenu inicio , ingresar;
-    JMenuItem ingresar1 ,catalogo;
+    JMenuItem ingresar1 ,catalogo,registrar;
             
     Test mipane;
   
     public frame_principal(){
-        setLayout(new BorderLayout());
+        setLayout(new BorderLayout(40,30));
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize(); 
          setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
          setBounds(150,0,1200, 800);
@@ -38,7 +41,7 @@ public class frame_principal extends JFrame {
         panel_botones.setLayout(new BorderLayout());
         
         titulo = new JLabel("CATALOGO DE VEHICULOS");
-        titulo.setForeground(Color.red);
+        titulo.setForeground(Color.blue);
         titulo.setFont(new Font("Arial", 3, 40));
         
         label = new JLabel();
@@ -54,6 +57,8 @@ public class frame_principal extends JFrame {
         ingresar = new JMenu("INGRESAR");
         ingresar1 = new JMenuItem("ingresar1");
         ingresar.add(ingresar1);
+        registrar = new JMenuItem("registrar");
+        ingresar.add(registrar);
         barra.add(ingresar);
         
         
@@ -66,7 +71,16 @@ public class frame_principal extends JFrame {
 
         mipane = new Test();
         add(mipane,BorderLayout.CENTER);
+        add(label,BorderLayout.WEST);
+        add(label1,BorderLayout.EAST);
         pack();
+        
+        catalogo.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+               new frame_principal();
+            }
+        }          
+);
         
         ingresar1.addActionListener(new ActionListener() {
 
@@ -75,11 +89,19 @@ public class frame_principal extends JFrame {
                 setVisible(false);
                 frame_ingresar mipane = new  frame_ingresar();
 
-                //frame_ingresar mipane = new frame_ingresar();
+                new frame_ingresar();
+
                 //interfaz_regitro_vehiculo pane=new interfaz_regitro_vehiculo();
 
             }
 
+        });
+        registrar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new interfaz_regitro_vehiculo();
+            }
         });
     }
 
