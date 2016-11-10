@@ -11,7 +11,6 @@ public class Main {
         menup.setVisible(true);
         menup.setResizable(false);
         menup.setBounds(250, 0, 1000, 600);
-
     }
 
 }

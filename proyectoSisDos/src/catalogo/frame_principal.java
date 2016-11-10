@@ -73,7 +73,7 @@ public class frame_principal extends JFrame {
            
             public void actionPerformed(ActionEvent ae) {
                 setVisible(false);
-                frame_principal mipane = new frame_principal();
+                frame_ingresar mipane = new  frame_ingresar();
 
                 //frame_ingresar mipane = new frame_ingresar();
                 //interfaz_regitro_vehiculo pane=new interfaz_regitro_vehiculo();

@@ -32,9 +32,9 @@ public class PanelMenu extends JPanel{
     
 public PanelMenu()
 {
-   imagen1 = new ImageIcon("src/Imagenes/auto.jpg");
-   imagen2 = new ImageIcon("src/Imagenes/repuest.jpg");
-   imagen3 = new ImageIcon("src/Imagenes/empleado.jpg");
+   imagen1 = new ImageIcon("/Imagenes/15045801_953312198132314_862881239_n");
+   imagen2 = new ImageIcon("src/Imagenes/15057898_953312284798972_1678591497_n");
+   imagen3 = new ImageIcon("src/Imagenes/15045692_953312151465652_842963912_n");
    
    setLayout(null);  
    
@@ -107,7 +107,7 @@ public PanelMenu()
       public void paint(Graphics g) {
           
            Dimension height = getSize();
-           ImageIcon Img = new ImageIcon("src/logos/fondo.jpg");
+           ImageIcon Img = new ImageIcon("src/Imagenes/fondo.jpg");
            g.drawImage(Img.getImage(), 0, 0, height.width, height.height, null);
            setOpaque(false);
           super.paintComponents(g);
