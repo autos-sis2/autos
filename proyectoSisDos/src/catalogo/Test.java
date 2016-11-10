@@ -1,67 +1,100 @@
 package catalogo;
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.ImageIcon;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
+import Controlador.Consultas;
+import java.util.ArrayList;
 public final class Test extends JPanel{
     
     Auto [] miauto = new Auto[12];
     JPanel prueba,prueba2,contenedor;
-    JLabel image1,tipo,placa,color,precio,estado,modelo;
-    JLabel nom_tipo,nom_placa,nom_color,nom_precio,nom_estado,nom_modelo;
+    JLabel image1,tipo,placa,color,precio,estado,modelo,codigo,marca;
+    JLabel nom_tipo,nom_placa,nom_color,nom_precio,nom_estado,nom_modelo, nom_codigo,nom_marca;
     ImageIcon mage = null;
-
+    Consultas cp;
+     ImageIcon foto ;
    public Test(){
        
        
-       llenar_vec();
+       //llenar_vec();
+       ArrayList<Auto> miauto1 = new ArrayList<Auto>(); 
+       cp = new Consultas();
+       miauto1 = cp.catalogo();
+      
        setLayout(new BorderLayout(50,30));
        
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(6,2,20,40));
+        panel.setLayout(new GridLayout((miauto1.size()+1)/2,2,20,40));
 
-        for (Auto miauto1 : miauto) {
+        for (Auto miauto : miauto1) {
             prueba=new JPanel ();
             prueba.setLayout(new GridLayout(1,2,50,20));
             prueba2=new JPanel ();
-            prueba2.setLayout(new GridLayout(6,2));
+            prueba2.setLayout(new GridLayout(8,2));
             image1=new JLabel();
-           // image1.setIcon(new ImageIcon("auto.jpg"));
-            mage=new ImageIcon(miauto1.getImagen().getImage().getScaledInstance(220, -1, Image.SCALE_DEFAULT));
+            foto = new ImageIcon(miauto.getImagen());
+            mage=new ImageIcon(foto.getImage().getScaledInstance(220, -1, Image.SCALE_DEFAULT));
             image1.setIcon(mage);
             
+            nom_codigo = new JLabel("CODIGO");
+            nom_codigo.setForeground(Color.blue);
+            codigo = new JLabel(miauto.getCodigo());
+            
             nom_tipo = new JLabel("TIPO");
-            tipo = new JLabel(miauto1.getTipo());
-            
-            nom_placa = new JLabel("PLACA");
-            placa = new JLabel(miauto1.getMatricula());
-            
-            nom_color = new JLabel("COLOR");
-            color = new JLabel(miauto1.getColor());
-            
-            nom_precio = new JLabel("PRECIO");
-            precio = new JLabel(miauto1.getPrecio());
+            nom_tipo.setForeground(Color.blue);
+            tipo = new JLabel(miauto.getTipo());
             
             nom_estado = new JLabel("ESTADO");
-            estado = new JLabel(miauto1.getEstado());
+            nom_estado.setForeground(Color.blue);
+            estado = new JLabel(miauto.getEstado());
             
+            nom_marca = new JLabel("MARCA");
+            nom_marca.setForeground(Color.blue);
+            marca = new JLabel(miauto.getMarca());
+            
+            nom_placa = new JLabel("PLACA");
+            nom_placa.setForeground(Color.blue);
+            placa = new JLabel(miauto.getMatricula());
+            
+            nom_color = new JLabel("COLOR");
+            nom_color.setForeground(Color.blue);
+            color = new JLabel(miauto.getColor());
+            
+            nom_precio = new JLabel("PRECIO");
+            nom_precio.setForeground(Color.blue);
+            precio = new JLabel(miauto.getPrecio());
+
             nom_modelo = new JLabel("MODELO");
-            modelo = new JLabel(miauto1.getModelo());
+            nom_modelo.setForeground(Color.blue);
+            modelo = new JLabel(miauto.getModelo());
             
+            prueba2.add(nom_codigo);
+            prueba2.add(codigo);
             prueba2.add(nom_tipo);
             prueba2.add(tipo);
+            prueba2.add(nom_estado);
+            prueba2.add(estado);
+            prueba2.add(nom_marca);
+            prueba2.add(marca);
             prueba2.add(nom_placa);
             prueba2.add(placa);
             prueba2.add(nom_color);
             prueba2.add(color);
             prueba2.add(nom_precio);
             prueba2.add(precio);
-            prueba2.add(nom_estado);
-            prueba2.add(estado);
             prueba2.add(nom_modelo);
             prueba2.add(modelo);
             
@@ -76,25 +109,5 @@ public final class Test extends JPanel{
         
    }
 
-       public void llenar_vec(){
-       
-       
-       ImageIcon icon = new ImageIcon("auto.jpg");
-       ImageIcon icon2 = new ImageIcon("auto2.jpg");
-       ImageIcon icon3 = new ImageIcon("auto3.jpg");
-  
-       miauto[0] = new Auto("120","EX-CON","ROJO","500.000.000$","NUEVO","1234-KBO",icon);
-       miauto[1] = new Auto("121","EX-CON2","VERDE","500.000.000$","NUEVO","1234-KBO",icon2);
-       miauto[2] = new Auto("122","EX-CON3","AZUL","500.000.000$","NUEVO","1234-KBO",icon3);
-       miauto[3] = new Auto("123","EX-CON4","PLOMO","500.000.000$","NUEVO","1234-KBO",icon);
-       miauto[4] = new Auto("123","EX-CON4","PLOMO","500.000.000$","NUEVO","1234-KBO",icon2);
-       miauto[5] = new Auto("123","EX-CON4","PLOMO","500.000.000$","NUEVO","1234-KBO",icon3);
-      miauto[6] = new Auto("120","EX-CON","ROJO","500.000.000$","NUEVO","1234-KBO",icon);
-       miauto[7] = new Auto("121","EX-CON2","VERDE","500.000.000$","NUEVO","1234-KBO",icon2);
-       miauto[8] = new Auto("122","EX-CON3","AZUL","500.000.000$","NUEVO","1234-KBO",icon3);
-       miauto[9] = new Auto("123","EX-CON4","PLOMO","500.000.000$","NUEVO","1234-KBO",icon);
-       miauto[10] = new Auto("122","EX-CON3","AZUL","500.000.000$","NUEVO","1234-KBO",icon2);
-       miauto[11] = new Auto("123","EX-CON4","PLOMO","500.000.000$","NUEVO","1234-KBO",icon3);
-       
-   }
+
 }

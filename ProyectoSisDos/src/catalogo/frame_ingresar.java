@@ -2,11 +2,14 @@ package catalogo;
 
 
 import Controlador.Consultas;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Array;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +19,13 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
@@ -124,7 +134,12 @@ public class frame_ingresar extends JFrame{
                 nombre=cp.retorna_nombre();
                 System.out.println(nombre);
                 
+                if(vista.equals("1")){
+                    
+                }
+                    
                 }   
+               
                 else{
                     System.out.println("contrasena o user incorrecto");
                 }
