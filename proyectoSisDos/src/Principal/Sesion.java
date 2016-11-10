@@ -45,11 +45,11 @@ public class Sesion extends javax.swing.JFrame {
     public void llenarCB() throws SQLException {
         jComboBox1.removeAllItems();//Vaciamos el JComboBox
         ArrayList<String> resultat;
-        resultat = cons.extraerRoles();//La consulta tiene que retornar un ArrayList
+/*        resultat = cons.extraerRoles();//La consulta tiene que retornar un ArrayList
 
         for (int i = 0; i < resultat.size(); i++){
             jComboBox1.addItem(resultat.get(i));
-        }
+        }*/
     }
     private void initComponents(){
 

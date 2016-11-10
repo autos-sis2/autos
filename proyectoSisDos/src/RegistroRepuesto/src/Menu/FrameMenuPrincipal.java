@@ -1,5 +1,5 @@
 
-package Menu;
+package RegistroRepuesto.src.Menu;
 
 import javax.swing.JFrame;
 
@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 public class FrameMenuPrincipal extends JFrame {
   public FrameMenuPrincipal()
  {
-        registrorepuesto.PanelMenu milamina = new registrorepuesto.PanelMenu();
+        PanelMenu milamina = new PanelMenu();
         add(milamina);
          setResizable(false); 
          setLocationRelativeTo(null); 

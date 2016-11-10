@@ -1,5 +1,4 @@
-
-package registrorepuesto;
+package Repuestos;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -9,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -37,11 +35,11 @@ public class MenuPanel  extends JPanel{
     
     public  MenuPanel(){
        
-        imagen1 = new ImageIcon("src/logos/anadir.jpg");
-        imagen2 = new ImageIcon("src/logos/modificar.jpg");
-        imagen3 = new ImageIcon("src/logos/Eliminar.jpg");
-        imagen4 = new ImageIcon("src/logos/buscar.jpg");
-        imagen5 = new ImageIcon("src/logos/atras.jpg");
+        imagen1 = new ImageIcon("src/Imagenes/anadir.jpg");
+        imagen2 = new ImageIcon("src/Imagenes/modificar.jpg");
+        imagen3 = new ImageIcon("src/Imagenes/Eliminar.jpg");
+        imagen4 = new ImageIcon("src/Imagenes/buscar.jpg");
+        imagen5 = new ImageIcon("src/Imagenes/atras.jpg");
         
          setLayout(null);
          setBackground(Color.red);
@@ -167,7 +165,7 @@ public class MenuPanel  extends JPanel{
       public void paint(Graphics g) {
           
            Dimension height = getSize();
-           ImageIcon Img = new ImageIcon("src/logos/fondo.jpg");
+           ImageIcon Img = new ImageIcon("src/Imagenes/fondo.jpg");
            g.drawImage(Img.getImage(), 0, 0, height.width, height.height, null);
            setOpaque(false);
           super.paintComponents(g);

@@ -1,5 +1,5 @@
 
-package Menu;
+package RegistroRepuesto.src.Menu;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -32,9 +32,9 @@ public class PanelMenu extends JPanel{
     
 public PanelMenu()
 {
-   imagen1 = new ImageIcon("src/logos/auto.jpg");
-   imagen2 = new ImageIcon("src/logos/repuest.jpg");
-   imagen3 = new ImageIcon("src/logos/empleado.jpg");
+   imagen1 = new ImageIcon("src/Imagenes/auto.jpg");
+   imagen2 = new ImageIcon("src/Imagenes/repuest.jpg");
+   imagen3 = new ImageIcon("src/Imagenes/empleado.jpg");
    
    setLayout(null);  
    

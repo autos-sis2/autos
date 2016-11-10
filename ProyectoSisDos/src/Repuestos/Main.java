@@ -1,5 +1,5 @@
 
-package registrorepuesto;
+package Repuestos;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -28,4 +28,3 @@ public class Main  {
     
     
 
-    

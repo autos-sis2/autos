@@ -1,5 +1,5 @@
 
-package registrorepuesto;
+package Repuestos;
 
 import javax.swing.JFrame;
 
@@ -21,3 +21,4 @@ public class FrameMenu extends JFrame {
   }
     
 }
+

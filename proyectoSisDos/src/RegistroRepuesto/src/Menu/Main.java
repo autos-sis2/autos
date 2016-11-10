@@ -1,5 +1,4 @@
-
-package Menu;
+package RegistroRepuesto.src.Menu;
 
 /**
  *
@@ -7,13 +6,12 @@ package Menu;
  */
 public class Main {
 
-    
     public static void main(String[] args) {
-        registrorepuesto.FrameMenuPrincipal menup=new registrorepuesto.FrameMenuPrincipal();
-      menup.setVisible(true);
-      menup.setResizable(false);
+        FrameMenuPrincipal menup = new FrameMenuPrincipal();
+        menup.setVisible(true);
+        menup.setResizable(false);
         menup.setBounds(250, 0, 1000, 600);
-    
+
     }
-    
+
 }
