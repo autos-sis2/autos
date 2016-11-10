@@ -18,13 +18,13 @@ public class Aplicacion { /*CAMBIO EN EL NOMBRE */
         frame1.setVisible(true);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        eliminar_vehiculo ev = new eliminar_vehiculo();
+        /*eliminar_vehiculo ev = new eliminar_vehiculo();
         ev.setVisible(true);
          
          actualizar_vehiculo av = new actualizar_vehiculo("coo;no;po;ar;con;vosi;ro;sip");
          av.setBounds(100, 200, 280, 400);
          av.setVisible(true);
-         av.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         av.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
        
     }
 }

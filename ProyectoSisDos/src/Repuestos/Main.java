@@ -20,7 +20,7 @@ public class Main  {
         //miframe.setResizable(false);
         miframe.setBounds(500, 0, 780, 750);
         miframe.setLocationRelativeTo(null);
-        miframe.setDefaultCloseOperation(miframe.EXIT_ON_CLOSE);
+        miframe.setDefaultCloseOperation(miframe.DISPOSE_ON_CLOSE);
     
 
     }

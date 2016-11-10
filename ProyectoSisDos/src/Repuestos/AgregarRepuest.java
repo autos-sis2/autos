@@ -1,42 +1,31 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Repuestos;
-
-import Controlador.Consultas;
-import Modelo.ManageBD;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author Daniela
  */
-public class AgregarRepuesto extends javax.swing.JFrame {
+public class AgregarRepuest extends javax.swing.JFrame {
 
-    Consultas cons = new Consultas();
-    ManageBD bd = new ManageBD();
-    
-    public AgregarRepuesto() throws SQLException {
+    /**
+     * Creates new form AgregarRepuesto
+     */
+    public AgregarRepuest() {
       
      super("Agregar");
      initComponents();
            
     }
         
-      public void llenarCB() throws SQLException {
-        jComboBox1.removeAllItems();//Vaciamos el JComboBox
-        ArrayList<String> resultat;
-        resultat = cons.extraer_tipo_repuesto();//La consulta tiene que retornar un ArrayList
-        for (int i = 0; i < resultat.size(); i++){
-            jComboBox1.addItem(resultat.get(i));
-        }
-    }
+
    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() throws SQLException {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -62,7 +51,7 @@ public class AgregarRepuesto extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         jLabel1.setText("AGREGAR   REPUESTO");
@@ -109,6 +98,12 @@ public class AgregarRepuesto extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -121,15 +116,14 @@ public class AgregarRepuesto extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] {}));
-        llenarCB();
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Repuesto   Mecanico", "Repuesto   Electronico" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CL", "INTEGRAD", "VIGOR", "FURGOVANG" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondito.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -286,49 +280,43 @@ public class AgregarRepuesto extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
        dispose();
-    }                                        
-  
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
    
-       String tipo_rep = (String) jComboBox1.getSelectedItem();
-       int id = cons.id_tipoRepuestoAuto(tipo_rep); 
-        String modelo = (String) jComboBox2.getSelectedItem();
-        
-        bd.añadir_repuesto(jTextField1.getText(),id, jTextField3.getText(), jTextField2.getText(), modelo);
-        
-        JOptionPane.showMessageDialog(this, "Los Datos ingresados son correctos");
-           
-       
-      
-    }                                        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-    }                                        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-    }                                           
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
-    }                                           
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
-    }                                           
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-    }                                          
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
-    }                                           
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,16 +348,12 @@ public class AgregarRepuesto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new AgregarRepuesto().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(AgregarRepuesto.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new AgregarRepuest().setVisible(true);
             }
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelar;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -393,6 +377,5 @@ public class AgregarRepuesto extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 }
-

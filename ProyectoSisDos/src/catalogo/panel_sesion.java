@@ -1,3 +1,5 @@
+package catalogo;
+
 
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -5,11 +7,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -36,9 +33,6 @@ public class panel_sesion extends   JPanel{
         panel.add(text_pass);
         
         add(panel);
-        
-        
-        
     }
     
 }

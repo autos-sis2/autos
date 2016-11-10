@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import registrorepuesto.FrameMenu;
+
 
 /**
  *
@@ -74,8 +74,8 @@ public PanelMenu()
            
            @Override
              public void actionPerformed (ActionEvent e) {
-              FrameMenu menuHerramienta=new FrameMenu();
-                menuHerramienta.dispose();
+             /* FrameMenu menuHerramienta=new FrameMenu();
+                menuHerramienta.dispose();*/
             }
         
             });

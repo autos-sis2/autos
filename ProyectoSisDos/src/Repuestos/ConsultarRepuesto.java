@@ -71,7 +71,7 @@ public class ConsultarRepuesto extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(""))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/repuesto.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
 
         jTextArea1.setColumns(20);
