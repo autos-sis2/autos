@@ -1,15 +1,9 @@
 
 package Repuestos;
 
-/**
- *
- * @author Daniela
- */
+
 public class EliminarRepuesto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EliminarRepuesto
-     */
     public EliminarRepuesto() {
         initComponents();
     }
@@ -28,7 +22,7 @@ public class EliminarRepuesto extends javax.swing.JFrame {
         cancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("ELIMINAR  REPUESTO");
@@ -57,7 +51,7 @@ public class EliminarRepuesto extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("src/Imagenes/borrar.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(""))); // NOI18N
         jLabel4.setText("jLabel4");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

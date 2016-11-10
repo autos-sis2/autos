@@ -11,7 +11,6 @@ public class Pruebadeconexion {
     {
       //ConexionPostgres cn = new  ConexionPostgres(); 
        ManageBD e = new ManageBD(); 
-       e.añadir_repuestos(3, 1, "12", "arol", "12ht");
        
     }
 }

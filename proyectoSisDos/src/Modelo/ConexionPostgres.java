@@ -22,8 +22,8 @@ public class ConexionPostgres {
     }
 
     public void iniciarConeccion(){
-        String url = "jdbc:postgresql://localhost:5432/autos"; /*EL NUMERO 5432 ES EL PUERTO DE POSTGRES  / (AQUI VA EL NOMBRE DE LA BASE DE DATOS)*/
-        password = "omarpepito";  /*INTRODUCIMOS NUESTRA CONTRASEÑA DE POSTGRES*/
+        String url = "jdbc:postgresql://localhost:5432/AgenciaAutos"; /*EL NUMERO 5432 ES EL PUERTO DE POSTGRES  / (AQUI VA EL NOMBRE DE LA BASE DE DATOS)*/
+        password = "postgres";  /*INTRODUCIMOS NUESTRA CONTRASEÑA DE POSTGRES*/
         try {
             Class.forName("org.postgresql.Driver");
             conexion = DriverManager.getConnection(url,"postgres", password);

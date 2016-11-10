@@ -14,6 +14,7 @@ public class Main  {
    
     public static void main(String[] args) {
         
+       
      FrameMenu miframe  = new FrameMenu();
      miframe.setVisible(true);
         //miframe.setResizable(false);

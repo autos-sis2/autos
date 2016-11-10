@@ -6,6 +6,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -62,9 +65,13 @@ public class MenuPanel  extends JPanel{
 
        public void actionPerformed (ActionEvent e) {
            
-           AgregarRepuesto miframe=new AgregarRepuesto();
-           miframe.setVisible(true);
-           //this.dispose();
+           try {
+               AgregarRepuesto miframe=  new AgregarRepuesto();
+               miframe.setVisible(true);
+               //this.dispose();
+           } catch (SQLException ex) {
+               Logger.getLogger(MenuPanel.class.getName()).log(Level.SEVERE, null, ex);
+           }
          }
         
         });

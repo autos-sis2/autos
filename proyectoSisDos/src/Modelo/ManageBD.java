@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelo;
 
+import static java.lang.String.valueOf;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -65,11 +62,12 @@ public class ManageBD {
     }
       
     
-    public void añadir_repuestos(int codigo , int tipo_rep , String costo ,String nombre ,String modelo)
+    public void añadir_repuesto(String codigo , int tipo_rep , String costo ,String nombre ,String modelo)
     {
+         Integer codigo1 = Integer.valueOf(codigo);
          try {
             s = conexion.createStatement();     
-            String sql1 = "INSERT INTO repuesto_automovil(id_repauto,id_tiporepuesto,nombre_rep,modelo,precio) VALUES('"+codigo+"','"+tipo_rep+"','"+nombre+"','"+modelo+"','"+costo+"')";
+            String sql1 = "INSERT INTO repuesto_automovil(id_repauto,id_tiporepuesto,nombre_rep,modelo,precio) VALUES('"+codigo1+"','"+tipo_rep+"','"+nombre+"','"+modelo+"','"+costo+"')";
             resp = s.executeQuery(sql1);
         } catch (Exception e){}
     }
