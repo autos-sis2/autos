@@ -1,0 +1,289 @@
+CREATE OR REPLACE FUNCTION nuevasession(id integer)
+  RETURNS void AS
+$BODY$
+
+BEGIN
+	
+INSERT INTO "sesion" VALUES(default,id,current_date,1,null,current_time);
+
+RETURN;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql 
+
+------------------------------------
+
+CREATE OR REPLACE FUNCTION pnombre_apellido(
+    OUT nombre character varying,
+    OUT apellidos character varying)
+  RETURNS SETOF record AS
+$BODY$
+BEGIN
+	
+return query  select "empleado"."nombre","empleado"."apellidos"
+      
+from (select "id_emp"
+           
+ from (select "id_usuario"
+                  
+from "usuario"
+                 
+ where "id_usuario"=buscarUsuario(pg_backend_pid()))  uno, "asignado_usuario"
+           
+ where uno."id_usuario"="asignado_usuario"."id_usuario") dos, "empleado"
+     
+ where dos."id_emp"="empleado"."id_emp";
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql 
+
+----------------------------------------
+CREATE OR REPLACE FUNCTION public.guardar_vehiculo2(
+    marca_in text,
+    estado_in text,
+    tipo_in text,
+    matricula_in text,
+    color_in text,
+    precio_in text,
+    year1_in text,
+    modelo_in text,
+    imagen_in text)
+  RETURNS void AS
+$BODY$ 
+  
+declare
+  id_tipo2 integer;
+
+  id_marca2 integer;
+  
+id_estado2 integer;
+
+
+BEGIN   
+        
+id_tipo2:=(select "id_tipoauto" from "tipo_auto" where "nombre_tipo" = tipo_in);
+        
+id_estado2:=(select "id_estado" from "estado_automovil" where "nombre_estado" = estado_in);
+        
+id_marca2:=(select "id_marca" from "marca" where "nombre_marca" = marca_in);
+	
+INSERT INTO "automovil" VALUES(default,id_marca2,id_estado2,id_tipo2,matricula_in,color_in,precio_in,year1_in,modelo_in,imagen_in);
+
+RETURN;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql
+------------------------------
+
+CREATE OR REPLACE FUNCTION correcto(
+    user1 text,
+    pass text)
+  RETURNS integer AS
+$BODY$
+
+declare 
+id integer;
+ var_pass text;
+
+BEGIN
+	
+Select "id_usuario" into id from "usuario" where "login"=user1 and "password"=pass ;
+
+return id;
+
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql 
+--------------------------------
+
+CREATE OR REPLACE FUNCTION certificados2()
+  RETURNS integer AS
+$BODY$
+
+declare
+
+fin integer;
+
+BEGIN
+	
+fin:= (select "vista"."id_vista" 
+from (select "id_vista"
+
+from (select "id_funcion"
+      
+from (select "id_rol"
+           
+ from (select "id_usuario"
+                  
+from "usuario"
+                  
+where "id_usuario"=buscarUsuario(pg_backend_pid()))  uno, "asignado_rol"
+            
+where uno."id_usuario"="asignado_rol"."id_usuario") dos, "asignado_funcion"
+     
+ where dos."id_rol" = "asignado_funcion"."id_rol") tres, "funcion_vista"
+
+where tres."id_funcion"="funcion_vista"."id_funcion") cuatro,"vista"
+
+where cuatro."id_vista" = "vista"."id_vista");
+
+
+return fin;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql 
+------------------------------------------------
+
+
+CREATE OR REPLACE FUNCTION public.buscarusuario(idp integer)
+  RETURNS integer AS
+$BODY$
+
+declare
+ var integer;
+BEGIN
+	
+Select "id_usuario" into var from "sesion" where "pid"=idp;
+
+RETURN var;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql
+-----------------------------------------------
+CREATE OR REPLACE FUNCTION anadirempleado(
+    nom character varying,
+    apellido character varying,
+    sexo character varying,
+    ci character varying,
+    sal integer,
+    des integer,
+    bonos integer)
+  RETURNS void AS
+$BODY$
+BEGIN
+	INSERT INTO empleado("id_emp","nombre","apellidos","sexo","ci","salario","descuento","bonos") VALUES(1,nom,apellido,sexxo,ci,sal,des,bonos);
+RETURN;
+END;
+$BODY$
+  LANGUAGE plpgsql
+
+-------------------------------
+CREATE OR REPLACE FUNCTION public.asignarpid()
+  RETURNS trigger AS
+$BODY$
+	
+BEGIN
+		
+NEW."pid":=pg_backend_pid();
+	
+RETURN NEW;
+	
+END;
+
+$BODY$
+  LANGUAGE plpgsql 
+------------------------------------
+-- incrementa las id de cada tabla 
+CREATE SEQUENCE public.auto_seq
+  INCREMENT 10
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1060
+  CACHE 1;
+ALTER TABLE public.auto_seq
+  OWNER TO postgres;
+------------
+CREATE SEQUENCE public.cliente_id
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE public.cliente_id
+  OWNER TO postgres;
+-----------
+CREATE SEQUENCE public.emp_id_sec
+  INCREMENT 4
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 13
+  CACHE 1;
+ALTER TABLE public.emp_id_sec
+  OWNER TO postgres;
+------------
+
+CREATE SEQUENCE public.estado_aut
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 3
+  CACHE 1;
+ALTER TABLE public.estado_aut
+  OWNER TO postgres;
+------------------
+CREATE SEQUENCE public.funcion_id
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE public.funcion_id
+  OWNER TO postgres;
+-------------------
+CREATE SEQUENCE public.marca_auto_id
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 7
+  CACHE 1;
+ALTER TABLE public.marca_auto_id
+  OWNER TO postgres;
+------------------
+CREATE SEQUENCE public.rol_id
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 2
+  CACHE 1;
+ALTER TABLE public.rol_id
+  OWNER TO postgres;
+----------------------
+CREATE SEQUENCE public.sesion_id
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 34
+  CACHE 1;
+ALTER TABLE public.sesion_id
+  OWNER TO postgres;
+--------------------
+CREATE SEQUENCE public.usuario_id
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 2
+  CACHE 1;
+ALTER TABLE public.usuario_id
+  OWNER TO postgres;
+--------------------
+CREATE SEQUENCE public.vista_id_sec
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE public.vista_id_sec
+  OWNER TO postgres;
+
