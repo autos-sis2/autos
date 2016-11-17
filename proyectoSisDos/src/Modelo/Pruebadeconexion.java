@@ -11,6 +11,7 @@ public class Pruebadeconexion {
     {
       //ConexionPostgres cn = new  ConexionPostgres(); 
        ManageBD e = new ManageBD(); 
-       
+       //e.update_rep("1", 1, "50", "rueda", "kaly");
+       e.añadir_nuevo_empleado("carola","nuñes", "f", "lla", "jahd", null, "cajero", 20, "hjasd");
     }
 }
