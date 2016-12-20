@@ -1,7 +1,7 @@
 package Repuestos;
 
 import Controlador.Consultas;
-import Modelo.ManageBD;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class ConsultarRepuesto extends javax.swing.JFrame {
 
     Consultas cons = new Consultas();
-    ManageBD bd = new ManageBD();
+    
     
     public ConsultarRepuesto() {
         initComponents();

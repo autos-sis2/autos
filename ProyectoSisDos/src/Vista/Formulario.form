@@ -2,7 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -80,21 +80,12 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jlFoto1" min="-2" pref="160" max="-2" attributes="0"/>
-                              <EmptySpace pref="813" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jbSubirFoto" min="-2" pref="160" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                              <Component id="jbAgregar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                              <Component id="jbLimpiar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="110" max="32767" attributes="0"/>
-                              <Component id="jbEliminar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jbSubirFoto" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace pref="55" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jScrollPane1" min="-2" pref="748" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -102,6 +93,14 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jbSalir" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jbAgregar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                      <Component id="jbLimpiar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                                      <Component id="jbEliminar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -125,44 +124,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtApellido1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlApellido1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jlFechaNacimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jcDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jcMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAñoNacimiento" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jlCi1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCI" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jlFoto1" min="-2" pref="146" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlSexo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbSexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbSubirFoto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jlCorreo1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -172,9 +133,9 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jbAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jbLimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jbEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jbAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
@@ -214,6 +175,44 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtApellido1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlApellido1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlFechaNacimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jcDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jcMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAñoNacimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlCi1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jlFoto1" min="-2" pref="146" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jlSexo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jbSubirFoto" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>

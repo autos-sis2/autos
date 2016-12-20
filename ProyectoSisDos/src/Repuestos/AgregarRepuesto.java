@@ -1,7 +1,7 @@
 package Repuestos;
 
 import Controlador.Consultas;
-import Modelo.ManageBD;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -15,8 +15,7 @@ import javax.swing.JOptionPane;
 public class AgregarRepuesto extends javax.swing.JFrame {
 
     Consultas cons = new Consultas();
-    ManageBD bd = new ManageBD();
-
+  
     public AgregarRepuesto() throws SQLException {
 
         super("Agregar");
@@ -297,7 +296,7 @@ public class AgregarRepuesto extends javax.swing.JFrame {
         int id = cons.id_tipoRepuestoAuto(tipo_rep);
         String modelo = (String) jComboBox2.getSelectedItem();
 
-        bd.añadir_repuesto(jTextField1.getText(), id, jTextField3.getText(), jTextField2.getText(), modelo);
+        cons.añadir_repuesto(jTextField1.getText(), id, jTextField3.getText(), jTextField2.getText(), modelo);
 
         JOptionPane.showMessageDialog(this, "Los Datos ingresados son correctos");
 

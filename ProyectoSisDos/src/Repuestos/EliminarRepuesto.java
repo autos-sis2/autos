@@ -1,13 +1,13 @@
 package Repuestos;
 
 import Controlador.Consultas;
-import Modelo.ManageBD;
+
 import javax.swing.JOptionPane;
 
 public class EliminarRepuesto extends javax.swing.JFrame {
 
     Consultas cons = new Consultas();
-    ManageBD bd = new ManageBD();
+    //ManageBD bd = new ManageBD();
 
     public EliminarRepuesto() {
         initComponents();
@@ -28,7 +28,7 @@ public class EliminarRepuesto extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("ELIMINAR  REPUESTO");
@@ -135,7 +135,7 @@ public class EliminarRepuesto extends javax.swing.JFrame {
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        bd.eliminar_rep(jTextField1.getText());
+        cons.eliminar_rep(jTextField1.getText());
         JOptionPane.showMessageDialog(this, "Se Elimino exitosamente !!");
     }
 

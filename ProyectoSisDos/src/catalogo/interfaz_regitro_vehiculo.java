@@ -7,18 +7,13 @@ package catalogo;
 import Controlador.Consultas;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -53,7 +48,7 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
             setBounds(300,300,700,400);
         JPanel paneregistro = new JPanel();
         //paneregistro.setBackground(Color.red);
-        paneregistro.setBorder(javax.swing.BorderFactory.createTitledBorder("REGISTRO DE VEHICULO"));
+        paneregistro.setBorder(javax.swing.BorderFactory.createTitledBorder(" REGISTRO DE VEHICULO"));
         paneregistro.setLayout(new BorderLayout(10,10));
         
         JPanel paneimagen = new JPanel();
@@ -250,7 +245,7 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
                
                 
                cp = new Consultas();
-               cp.registrar_vehiculo(marca, estado, tipo, matricula, color, precio, year, modelo, imagen);
+               cp.registrar_vehiculo(marca, estado, tipo, matricula, color, precio, modelo, year, imagen);
                
             }
         });
@@ -294,5 +289,12 @@ public class interfaz_regitro_vehiculo extends JFrame implements ActionListener{
                         }
                 }
         }
+    
+   
+     public static void main(String[] args)
+    {
+    new  interfaz_regitro_vehiculo();
+     
+    }
 }
 

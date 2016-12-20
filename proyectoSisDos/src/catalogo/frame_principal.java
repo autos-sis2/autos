@@ -8,9 +8,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -40,8 +37,8 @@ public class frame_principal extends JFrame {
         panel_botones=new JPanel();
         panel_botones.setLayout(new BorderLayout());
         
-        titulo = new JLabel("CATALOGO DE VEHICULOS");
-        titulo.setForeground(Color.blue);
+        titulo = new JLabel("                   CATALOGO DE VEHICULOS");
+        titulo.setForeground(Color.BLACK);
         titulo.setFont(new Font("Arial", 3, 40));
         
         label = new JLabel();
@@ -55,7 +52,7 @@ public class frame_principal extends JFrame {
         barra.add(inicio);
         
         ingresar = new JMenu("INGRESAR");
-        ingresar1 = new JMenuItem("ingresar1");
+        ingresar1 = new JMenuItem("*ingresar");
         ingresar.add(ingresar1);
         registrar = new JMenuItem("registrar");
         ingresar.add(registrar);
@@ -77,6 +74,7 @@ public class frame_principal extends JFrame {
         
         catalogo.addActionListener(new ActionListener() {
              public void actionPerformed(ActionEvent e) {
+                 setVisible(false);
                new frame_principal();
             }
         }          
@@ -87,7 +85,7 @@ public class frame_principal extends JFrame {
            
             public void actionPerformed(ActionEvent ae) {
                 setVisible(false);
-                frame_ingresar mipane = new  frame_ingresar();
+               
 
                 new frame_ingresar();
 

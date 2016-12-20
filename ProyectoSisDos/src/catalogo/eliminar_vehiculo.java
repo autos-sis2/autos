@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package catalogo;
 /**
  *
  * @author Fabiola Fernandez
@@ -21,7 +21,7 @@ public class eliminar_vehiculo extends javax.swing.JFrame {
         codigo_eliminar = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
         setForeground(new java.awt.Color(0, 102, 102));
 
@@ -106,5 +106,6 @@ public class eliminar_vehiculo extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel modelo;
+    
 }
 

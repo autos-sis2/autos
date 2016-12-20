@@ -1,7 +1,7 @@
 package Repuestos;
 
 import Controlador.Consultas;
-import Modelo.ManageBD;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class ModificarDatosRepuesto extends javax.swing.JFrame {
 
     Consultas cons = new Consultas();
-    ManageBD bd = new ManageBD();
+   
 
     public ModificarDatosRepuesto() {
         initComponents();
@@ -284,7 +284,7 @@ public class ModificarDatosRepuesto extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
      //modificar
      
-     bd.update_rep(jTextField1.getText(),cons.id_tipoRepuestoAuto(tipo_rep), jTextField3.getText(), jTextField2.getText(), modelo);
+     cons.update_rep(jTextField1.getText(),cons.id_tipoRepuestoAuto(tipo_rep), jTextField3.getText(), jTextField2.getText(), modelo);
             
       JOptionPane.showMessageDialog(this, "Cambio Realizado Exitosamente ");
 

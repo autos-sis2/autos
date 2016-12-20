@@ -1,17 +1,9 @@
 package catalogo;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.Rectangle;
-import java.awt.Toolkit;
-import java.net.URL;
 import javax.swing.ImageIcon;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -27,9 +19,7 @@ public final class Test extends JPanel{
     Consultas cp;
      ImageIcon foto ;
    public Test(){
-       
-       
-       //llenar_vec();
+      
        ArrayList<Auto> miauto1 = new ArrayList<Auto>(); 
        cp = new Consultas();
        miauto1 = cp.catalogo();

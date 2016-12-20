@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package catalogo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -29,10 +29,9 @@ public class actualizar_vehiculo extends JFrame implements ActionListener{
        
         private String[] datos = new String[9];
         
-        
-    
-    public actualizar_vehiculo(String informacion){
-        datos = informacion.split(";");
+         
+    public actualizar_vehiculo(){
+        //datos = informacion.split(";");
         
         setLayout(new GridLayout(1,2,10,10));
         
@@ -196,5 +195,14 @@ public class actualizar_vehiculo extends JFrame implements ActionListener{
     {
     
     }
+    /*
+    public static void main(String[] args)
+    {
+     actualizar_vehiculo av = new actualizar_vehiculo();
+     av.setBounds(100, 100, 400,400);
+     av.setVisible(true);
+    
+   
+    }*/
 }
 

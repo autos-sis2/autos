@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package xp;
 
+import Vista.*;
 import java.awt.BorderLayout;
 import java.awt.print.PrinterException;
 import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -363,6 +366,16 @@ public class FacturaE extends javax.swing.JFrame {
         tbFactura.setModel(modelo);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void validar(String dato){
+        Pattern pat = Pattern.compile("^[a-zA-Z0-9_-]{2,}@[a-zA-Z0-9_-]{2,}\\.[a-zA-Z]{2,4}(\\.[a-zA-Z]{2,4})?$");
+        Matcher mat = pat.matcher(dato);
+        if(mat.find()){
+            JOptionPane.showMessageDialog(null, "el texto escrito es un correo");
+        }else{
+            JOptionPane.showMessageDialog(null, "el texto escrito NO! es un correo");
+        }
+    }
+    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Fondo aplicarFondo= new Fondo();
         this.add(aplicarFondo, BorderLayout.CENTER);
@@ -412,13 +425,17 @@ public class FacturaE extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FacturaE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FacturaE().setVisible(true);
+                new FacturaE().validar("aloibaf_1607");
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
