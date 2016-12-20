@@ -366,13 +366,15 @@ public class FacturaE extends javax.swing.JFrame {
         tbFactura.setModel(modelo);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void validar(String dato){
+    public  boolean validarDeCorreo(String dato){
         Pattern pat = Pattern.compile("^[a-zA-Z0-9_-]{2,}@[a-zA-Z0-9_-]{2,}\\.[a-zA-Z]{2,4}(\\.[a-zA-Z]{2,4})?$");
         Matcher mat = pat.matcher(dato);
         if(mat.find()){
-            JOptionPane.showMessageDialog(null, "el texto escrito es un correo");
+            return true;
+            //JOptionPane.showMessageDialog(null, "el texto escrito es un correo");
         }else{
-            JOptionPane.showMessageDialog(null, "el texto escrito NO! es un correo");
+            //JOptionPane.showMessageDialog(null, "el texto escrito NO! es un correo");
+            return false;
         }
     }
     
@@ -431,7 +433,7 @@ public class FacturaE extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FacturaE().setVisible(true);
-                new FacturaE().validar("aloibaf_1607");
+               
             }
         });
         
