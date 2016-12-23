@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pruebas;
+package xp;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
+import pruebas.otro;
 /**
  *
  * @author CINTHIA FELIPE
