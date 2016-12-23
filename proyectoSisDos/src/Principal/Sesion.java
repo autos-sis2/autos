@@ -36,7 +36,6 @@ public class Sesion extends javax.swing.JFrame {
         ((JPanel)getContentPane()).setOpaque(false);
         ImageIcon MyImgCustom =new ImageIcon("src/Imagenes/fondos-para-celular-hd-diente-de-leon.jpg"); 
         JLabel fondo= new JLabel(); 
-        
         fondo.setIcon(MyImgCustom); 
         getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER);
         fondo.setBounds(0,0,MyImgCustom.getIconWidth(),MyImgCustom.getIconHeight());
