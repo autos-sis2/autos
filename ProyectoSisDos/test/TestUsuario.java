@@ -30,18 +30,14 @@ public class TestUsuario {
     
     @Before
     public void setUp() {
+        // ConnectionDB.getInstance().start();
     }
     
     @After
     public void tearDown() {
     }
     
-    @Before
-    public void setUp() {
-          ConnectionDB.getInstance().start();
-    }
-    
-    @Test
+/*    @Test
     public void testGetStatusTask() throws ClassNotFoundException, SQLException {
         
         Task task = new Task("Crear Tabla Tarea","Crear la tabla para la base de base");
@@ -55,22 +51,6 @@ public class TestUsuario {
         assertEquals(expected, actual);
         
     }
+*/
 
-
-    @Test
-    public void testGetStatusUserStory() {
-        UserStory story = new UserStory("Registrar Tarea", "Se guarden los siguientes datos:"
-                + "ID_Tarea,Nombre,Descripcion,Historia a la que pertenece", 300, 3);
-        String expected = "In Progress";
-        int idStory = QueryBuilded.getInstance().getIdStory(story.getTitleStory());
-        QueryBuilded.getInstance().updateStatusStory(idStory);
-        String actual = QueryBuilded.getInstance().getStatusStory(idStory);
-        
-        assertEquals(expected, actual);
-    }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }

@@ -19,6 +19,7 @@ import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 /**
  *
  * @author CINTHIA FELIPE
@@ -552,50 +553,48 @@ public class Formulario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formWindowOpened
 
-      public  boolean validarDeCorreo(String dato){
+    public boolean validarDeCorreo(String dato) {
         Pattern pat = Pattern.compile("^[a-zA-Z0-9_-]{2,}@[a-zA-Z0-9_-]{2,}\\.[a-zA-Z]{2,4}(\\.[a-zA-Z]{2,4})?$");
         Matcher mat = pat.matcher(dato);
-        if(mat.find()){
+        if (mat.find()) {
             return true;
             //JOptionPane.showMessageDialog(null, "el texto escrito es un correo");
-        }else{
+        } else {
             //JOptionPane.showMessageDialog(null, "el texto escrito NO! es un correo");
             return false;
         }
     }
-      
-     public boolean validadCI(String cedula)
-     {
-       boolean res = false;  
-        if(cedula.isEmpty())
-        {
-         return false;
-        }
-        else if(cedula.length()>=7 || cedula.length()<=8)
-        {
-         for(int i =0 ;i <cedula.length(); i++)
-         {
-           char v = cedula.charAt(i);
-           if(v>= 0 && v<=9 )
-           {
-            res = true;
-           }
-           else
-           {
-            res = false;
-           }
-            
-         }
+
+    public boolean validarCI(String cedula) {
+        boolean res = false;
+        if (cedula.isEmpty()) {
+            return false;
+        } else if (cedula.length() >= 7 || cedula.length() <= 8) {
+            for (int i = 0; i < cedula.length(); i++) {
+                char v = cedula.charAt(i);
+                if (v >= 0 && v <= 9) {
+                    res = true;
+                } else {
+                    res = false;
+                }
+            }
         }
         return res;
-     }
-      
-     
-     public boolean  datosNulos(String nombre)
-     {
-       return  nombre.isEmpty() ? false : true;
-     }
-    
+    }
+
+    public boolean datosNulos(String nombre) {
+        return nombre.isEmpty() ? true : false;
+    }
+
+    public boolean verificarNumeros(String dato)
+    {
+     return ((dato).matches("([0-9]|\\s)+")) ? true : false;
+    }
+    public boolean verificarLetras(String cad) {
+        
+        return ((cad).matches("([a-z]|[A-Z]|\\s)+")) ? true :false;
+    }
+
     private void txtNombre1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombre1KeyTyped
         if (txtNombre1.getText().length() >= 20) {
             evt.consume();
@@ -627,13 +626,8 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAñoNacimientoKeyTyped
 
     private void txtCIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCIKeyTyped
-        if (txtCI.getText().length() >= 8) {
-            evt.consume();
-        }
-        char TipoDeTecla = evt.getKeyChar();
-        if (!Character.isDigit(TipoDeTecla)) {
-            evt.consume();
-        }
+ 
+        validarCI(txtCI.getText());
     }//GEN-LAST:event_txtCIKeyTyped
 
     private void txtCorreo1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreo1KeyTyped

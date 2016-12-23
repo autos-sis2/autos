@@ -34,6 +34,7 @@ public class testEmpleado {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -52,17 +53,31 @@ public class testEmpleado {
      assertEquals(res1,false);
     }
     
-    public void validarCI()
-    {
-      boolean res = formEmp.validadCI("12345");
-      assertEquals(true,res);
-    }
-    
+    @Test 
     public void verficarDatosNulos()
     {
-      assertEquals(false,formEmp.datosNulos(""));
+      assertEquals(true,formEmp.datosNulos(""));
     }
     
+     @Test
+    public void validarNUmerosCiFechaSalario()
+    {
+      boolean res = formEmp.verificarNumeros("9448237"); //ci
+      boolean r1 = formEmp.verificarNumeros("12091007"); //fecha de ingreso
+      boolean r2 = formEmp.verificarNumeros("30$$"); //salario
+      assertEquals(true,res);
+      assertEquals(true,r1);
+      assertFalse(r2);
+    }
+   
     
+     @Test
+     public void validarNombreyApellido()
+     {
+       boolean nombre =formEmp.verificarLetras("daniela");
+       boolean nombre1 = formEmp.verificarLetras("fabi16iola");
+       assertEquals(nombre,true);
+       assertEquals(nombre1,false);
+     }
     
 }
