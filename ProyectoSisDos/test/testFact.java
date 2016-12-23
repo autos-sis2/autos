@@ -53,9 +53,8 @@ public class testFact {
      assertEquals(res1,false);
     }
     
-    public void validarTelefono()
-    {
-    
-    }
+    //public void validarTelefono()
+    //{
+    //}
     
 }

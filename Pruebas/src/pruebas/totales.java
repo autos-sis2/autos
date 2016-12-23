@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xp;
+package pruebas;
 
 /**
  *
- * @author Fabiola Fernandez
+ * @author CINTHIA FELIPE
  */
-public class Factura {
+public class totales {
     
 }

@@ -6,7 +6,7 @@
 package Controlador;
 
 import Modelo.ConexionPostgres;
-import catalogo.Auto;
+import xp.Auto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

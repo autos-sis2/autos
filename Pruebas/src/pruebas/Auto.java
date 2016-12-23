@@ -1,4 +1,4 @@
-package catalogo;
+package pruebas;
 /**
  *
  * @author omar
@@ -16,6 +16,10 @@ public class Auto {
         this.year = year;
         this.modelo = modelo;
         this.imagen = imagen;
+    }
+
+    Auto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
   
