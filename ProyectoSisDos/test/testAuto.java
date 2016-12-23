@@ -8,20 +8,16 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-
-import static org.junit.Assert.*;
 import org.junit.Test;
-import xp.FacturaE;
-import org.junit.Ignore;
-
+import static org.junit.Assert.*;
 
 /**
  *
  * @author Fabiola Fernandez
  */
-public class testFact {
+public class testAuto {
     
-    public testFact() {
+    public testAuto() {
     }
     
     @BeforeClass
@@ -40,6 +36,7 @@ public class testFact {
     public void tearDown() {
     }
 
+<<<<<<< HEAD:ProyectoSisDos/test/testFact.java
     public void conexion()
     {
     }
@@ -57,4 +54,11 @@ public class testFact {
     //{
     //}
     
+=======
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+    // @Test
+    // public void hello() {}
+>>>>>>> 234d904a047ae244afa97e8705377801540e9873:ProyectoSisDos/test/testAuto.java
 }
