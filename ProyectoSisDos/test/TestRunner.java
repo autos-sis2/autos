@@ -14,7 +14,7 @@ import org.junit.runner.notification.Failure;
 
 public class TestRunner {
    public static void main(String[] args) {
-      Result result = JUnitCore.runClasses(testFact.class);
+      Result result = JUnitCore.runClasses(testEmpleado.class);
 		
       for (Failure failure : result.getFailures()) {
         System.out.println(failure.toString());
